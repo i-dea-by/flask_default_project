@@ -11,6 +11,13 @@ def init_app():
     # Initialize Plugins
     # db.init_app(app)
 
+    if app.debug:
+        try:
+            from flask_debugtoolbar import DebugToolbarExtension
+            toolbar = DebugToolbarExtension(app)
+        except:
+            pass
+
     with app.app_context():
         # Include our Routes
         import app.main.routes as main
