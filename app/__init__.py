@@ -1,15 +1,16 @@
 from flask import Flask
 
-from .db import db
+from .db import db, migrate
 
 
 def init_app():
-    """Initialize the core application."""
+    """ Инициализация ядра приложения """
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
 
-    # Initialize Plugins
-    # db.init_app(app)
+    # инициализация БД и миграций
+    db.init_app(app)
+    migrate.init_app(app, db)
 
     if app.debug:
         try:
