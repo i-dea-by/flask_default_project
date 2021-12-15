@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% if title %}
-        <title>{{ title }} :: i.dea.by</title>
-    {% else %}
-        <title>i.dea.by</title>
-    {% endif %}
+    {%- if title %}
+        <title>{{ title }}</title>
+    {%- else %}
+        <title>default index title</title>
+    {%- endif %}
 </head>
 <body>
-    <h1>Индекс</h1>
+    <h1>default index page H1</h1>
 </body>
 </html>
