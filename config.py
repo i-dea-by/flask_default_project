@@ -18,7 +18,8 @@ class Config:
     # URI используемая для подключения к базе данных
     SQLALCHEMY_DATABASE_URI = environ['DATABASE_URL']
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+    # Возможность замены стандартного /admin на любой другой
+    ADMIN_URL = environ.get('ADMIN_URL') or '/admin/'
 
 class ProductionConfig(Config):
     FLASK_ENV = 'production'
