@@ -8,7 +8,7 @@ from .db import db, migrate
 admin = Admin()
 
 
-def init_app():
+def create_app():
     # Загрузка из окружения режима работы flask (Prod или Dev)
     app_mode = os.getenv("APP_SETTINGS", "config.ProductionConfig")
     # Инициализация ядра приложения
@@ -36,4 +36,4 @@ def init_app():
         import app.admin.routes as admin_bp
         app.register_blueprint(admin_bp.module)
 
-        return app
+    return app
