@@ -2,8 +2,11 @@ from os import environ, path
 
 from dotenv import load_dotenv
 
-basedir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(basedir, '.env'))
+dotenv_path = path.join(path.dirname(__file__), '.env')
+if path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
+else:
+    raise FileNotFoundError('Создайте и заполните .env файл в корне проекта!')
 
 
 class Config:
