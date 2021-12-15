@@ -28,9 +28,12 @@ def init_app():
             pass
 
     with app.app_context():
-        # Include our Routes
+        """ Include our Routes & register Blueprints """
+        # main
         import app.main.routes as main
-        # Register Blueprints
         app.register_blueprint(main.module)
+        # admin
+        import app.admin.routes as admin_bp
+        app.register_blueprint(admin_bp.module)
 
         return app
