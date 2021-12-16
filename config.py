@@ -21,6 +21,7 @@ class Config:
     # Возможность замены стандартного /admin на любой другой
     ADMIN_URL = environ.get('ADMIN_URL') or '/admin/'
 
+
 class ProductionConfig(Config):
     FLASK_ENV = 'production'
     DEBUG = False
