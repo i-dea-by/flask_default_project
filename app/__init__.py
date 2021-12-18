@@ -28,8 +28,8 @@ def create_app():
             pass
 
     with app.app_context():
-        """ регистрация приложений: routes & Blueprints """
-        # admin
+        """ регистрация приложений: routes & blueprints """
+        # admin blueprint
         import app.admin.routes as admin_bp
         app.register_blueprint(admin_bp.module)
         # example blueprint
