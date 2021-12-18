@@ -4,7 +4,7 @@ from app import db
 class User(db.Model):
     """ example data model for user accounts """
 
-    __tablename__ = 'example_flask-default-project_users'
+    __tablename__ = 'example-users'
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
