@@ -16,7 +16,7 @@ class Config:
     # Включение защиты против "Cross-site Request Forgery (CSRF)"
     CSRF_ENABLED = True
     # URI используемая для подключения к базе данных
-    SQLALCHEMY_DATABASE_URI = environ['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI = environ.get('DATABASE_URL') or 'sqlite:///example.sqlite3'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # Возможность замены стандартного /admin на любой другой
     ADMIN_URL = environ.get('ADMIN_URL') or '/admin/'
