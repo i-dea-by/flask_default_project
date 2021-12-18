@@ -29,11 +29,11 @@ def create_app():
 
     with app.app_context():
         """ регистрация приложений: routes & Blueprints """
-        # main
-        import app.main.routes as main
-        app.register_blueprint(main.module)
         # admin
         import app.admin.routes as admin_bp
         app.register_blueprint(admin_bp.module)
+        # example blueprint
+        import app.example.routes as example_bp
+        app.register_blueprint(example_bp.module)
 
         return app

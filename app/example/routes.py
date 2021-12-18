@@ -2,7 +2,7 @@ from flask import Blueprint, render_template
 
 # Blueprint Configuration
 module = Blueprint(
-    'main_bp', __name__,
+    'example_bp', __name__,
     template_folder='templates',
     static_folder='static'
 )
