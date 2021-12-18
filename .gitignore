@@ -24,3 +24,7 @@ htmlcov/
 .coverage
 .coverage.*
 *,cover
+
+# this flask project excludes
+example.sqlite3
+migrations/
