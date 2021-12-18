@@ -33,7 +33,10 @@ def create_app():
         import app.admin.routes as admin_bp
         app.register_blueprint(admin_bp.module)
         # example blueprint
-        import app.example.routes as example_bp
-        app.register_blueprint(example_bp.module)
+        from app.example import example as example_blueprint
+        app.register_blueprint(example_blueprint)
+
+        # создаем базу для всех моделей
+        db.create_all()
 
         return app
